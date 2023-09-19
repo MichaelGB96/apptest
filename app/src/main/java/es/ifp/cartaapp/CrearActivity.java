@@ -56,7 +56,8 @@ public class CrearActivity extends AppCompatActivity {
                 String precio = boxPrice.getText().toString();
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url = "http://192.168.1.133/App2/create.php";
+                //String url = "http://192.168.1.133/App2/create.php"; //localhost XAMPP
+                String url = "https://end-stopped-buy.000webhostapp.com/create.php"; // 000webhost
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                     @Override
@@ -65,6 +66,7 @@ public class CrearActivity extends AppCompatActivity {
                             Toast.makeText(CrearActivity.this, "Plato añadido", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(CrearActivity.this, response, Toast.LENGTH_SHORT).show();
+                            System.out.println("ñññ: "+response);
                         }
                     }
                 }, new Response.ErrorListener() {

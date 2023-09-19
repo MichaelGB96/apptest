@@ -4,7 +4,7 @@ require_once("./config.php");
 
 class Conexion{
 
-    public static function conexion(){
+    public function conexion(){
         try {
             $con_bd = new PDO('mysql:host='.DB_HOST.'; dbname='.DB_NOMBRE, DB_USUARIO, DB_CONTRA);
             $con_bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -13,7 +13,8 @@ class Producto
     public function __construct()
     {
         require_once("./conn.php");
-        $this->db = Conexion::conexion();
+	$con = new Conexion();
+        $this->db = $con->conexion();
         $this->id;    
         $this->nombre = "";
         $this->tipo = "";
