@@ -7,13 +7,20 @@ if (!empty($_POST['id'])) {
     $idProducto = $_POST['id'];
 
     $producto = new Producto();
-    $producto->getById($idProducto);
+    $producto = $producto->getById($idProducto);
 
-/*     $nombre = $producto->getNombre();
+    $nombre = $producto->getNombre();
     $tipo = $producto->getTipo();
-    $precio = $producto->getPrecio(); */
+    $precio = $producto->getPrecio();
 
-    $json = json_encode($producto);
+    $productoInfo = array(
+        "id" => $idProducto,
+        "nombre" => $nombre,
+        "tipo" => $tipo,
+        "precio" => $precio
+    );
+
+    $json = json_encode($productoInfo);
        
 } else { // Si no se especifica id, se muestran todos los productos
     $productos = new Producto();
