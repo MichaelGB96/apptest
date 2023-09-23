@@ -13,7 +13,7 @@ class Producto
     public function __construct()
     {
         require_once("./conn.php");
-	$con = new Conexion();
+	    $con = new Conexion();
         $this->db = $con->conexion();
         $this->id;    
         $this->nombre = "";
@@ -71,7 +71,7 @@ class Producto
     {   
         $product = new Producto();
 
-        $sql = "SELECT * FROM productos WHERE id = ?";
+        $sql = "SELECT * FROM platos WHERE id = ?";
         $consulta = $this->db->prepare($sql);
         $consulta->execute(array($idProducto));
         $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
@@ -102,9 +102,9 @@ class Producto
     }
 
     // Modifica un producto existente en la base de datos
-    public function modificarProducto($idProducto, $tipo, $nombre, $alcoholica, $precio, $descripcion, $imagen)
+    public function actualizarProducto($idProducto, $tipo, $nombre, $precio)
     {
-        $sql = "UPDATE productos SET nombre = ?, tipo = ?, precio = ? WHERE id = ?";
+        $sql = "UPDATE platos SET nombre = ?, tipo = ?, precio = ? WHERE id = ?";
         $consulta = $this->db->prepare($sql);
         $consulta->bindParam(1, $nombre, PDO::PARAM_STR);    
         $consulta->bindParam(2, $tipo, PDO::PARAM_STR);
