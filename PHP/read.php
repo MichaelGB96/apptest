@@ -1,10 +1,10 @@
 <?php
-
+header('Content-Type: application/json');
 require_once("./producto.php");
 
 //Si se especifica un id, se mostrará solo 1 producto
-if (!empty($_POST['id'])) {
-    $idProducto = $_POST['id'];
+if (!empty($_GET['id'])) {
+    $idProducto = $_GET['id'];
 
     $producto = new Producto();
     $producto = $producto->getById($idProducto);
@@ -20,11 +20,11 @@ if (!empty($_POST['id'])) {
         "precio" => $precio
     );
 
-    $json = json_encode($productoInfo);
+    $json = json_encode($productoInfo, JSON_PRETTY_PRINT);
        
 } else { // Si no se especifica id, se muestran todos los productos
     $productos = new Producto();
-    $json = json_encode($productos->getProductos());
+    $json = json_encode($productos->getProductos(), JSON_PRETTY_PRINT);
 }
 
 echo $json;
