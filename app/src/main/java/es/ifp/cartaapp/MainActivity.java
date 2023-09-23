@@ -82,20 +82,12 @@ public class MainActivity extends AppCompatActivity {
         // Add the request to the RequestQueue.
         queue.add(stringRequest);
 
-        /*platos.add("Tortilla de Patatas");
-        platos.add("Patatas Bravas");
-        platos.add("Cerveza");
-        platos.add("Coca Cola");
-        platos.add("Fanta de Naranja");
-        platos.add("Torrijas");*/
-
-
-
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(MainActivity.this, ""+ platos.get(position) +" seleccionado", Toast.LENGTH_SHORT).show();
+                nextAct = new Intent(MainActivity.this, VerProductoActivity.class);
+                startActivity(nextAct);
             }
         });
 
