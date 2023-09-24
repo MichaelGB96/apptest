@@ -84,6 +84,9 @@ public class CrearActivity extends AppCompatActivity {
                     }
                 };
                 queue.add(stringRequest);
+
+                nextAct = new Intent(CrearActivity.this, MainActivity.class);
+                startActivity(nextAct);
             }
         });
 
