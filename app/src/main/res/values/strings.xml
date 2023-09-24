@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">CartaApp</string>
+    <string name="title_main">CARTA</string>
+    <string name="title_crear">CREAR PRODUCTO</string>
+    <string name="lbl_name_crear">Nombre</string>
+    <string name="lbl_type_crear">Tipo</string>
+    <string name="lbl_price_crear">Precio</string>
+    <string name="btnNew_main">NUEVO PRODUCTO</string>
+    <string name="btnCreate_crear">CREAR</string>
+    <string name="btnBack">VOLVER</string>
+
+    <string name="imgContDesc_verProd">imagen del producto</string>
 </resources>

@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(MainActivity.this, ""+ platos.get(position) +" seleccionado", Toast.LENGTH_SHORT).show();
                 nextAct = new Intent(MainActivity.this, VerProductoActivity.class);
+                int idProd = platosId.get(position);
+                nextAct.putExtra("id", idProd);
                 startActivity(nextAct);
             }
         });
